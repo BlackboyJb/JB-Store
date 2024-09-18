@@ -1,11 +1,28 @@
 import { useParams, Link } from "react-router-dom";
 import { Row, Col, Image, ListGroup, Card, Button } from "react-bootstrap";
-import product from "../products";
 import Rating from '../helpers/ratings'
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const ProductdetailsPage = () => {
-  const { id: prouctID } = useParams();
-  const products = product.find((p) => p._id === prouctID);
+  const { id: productID } = useParams();
+
+  const [product, setProduct] = useState([])
+
+  useEffect(() => {
+   const getProductDetails = async() => {
+    try {
+      const res = await axios.get(`/api/product/${productID}`)
+      return setProduct(res.data)
+    } catch (error) {
+      console.log(error)
+    }
+   }
+   getProductDetails()
+  },[productID])
+    
+
+
   return (
     <>
       <Link className="btn btn-light my-3" to="/">
@@ -13,14 +30,14 @@ const ProductdetailsPage = () => {
       </Link>
       <Row>
         <Col md={5}>
-          <Image src={products.image} alt="" width='500px' />
+          <Image src={product.image} alt="" width='500px' />
         </Col>
 
         <Col md={4}>
           <ListGroup variant="flush">
-            <ListGroup.Item as='h1'>{products.name}</ListGroup.Item>
-            <ListGroup.Item><Rating value={products.rating} /></ListGroup.Item>
-            <ListGroup.Item as='p'>Description: {products.description}</ListGroup.Item>
+            <ListGroup.Item as='h1'>{product.name}</ListGroup.Item>
+            <ListGroup.Item><Rating value={product.rating} /></ListGroup.Item>
+            <ListGroup.Item as='p'>Description: {product.description}</ListGroup.Item>
           </ListGroup>
         </Col>
 
@@ -30,14 +47,14 @@ const ProductdetailsPage = () => {
           <ListGroup.Item>
             <Row>
              <Col>Description:</Col>
-             <Col><strong>${products.price}</strong></Col>
+             <Col><strong>${product.price}</strong></Col>
             </Row>
           </ListGroup.Item>
 
           <ListGroup.Item>
             <Row>
              <Col>Status:</Col>
-             <Col><strong>{products.countInStock > 0 ? 'In Stock' : 'Out of Stock'}</strong></Col>
+             <Col><strong>{product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}</strong></Col>
             </Row>
           </ListGroup.Item>
 
@@ -45,7 +62,7 @@ const ProductdetailsPage = () => {
           <ListGroup.Item>
           <Button className="btn-block"
               type="button"
-              disabled={products.countInStock === 0}
+              disabled={product.countInStock === 0}
           >
             Add to Cart
           </Button>

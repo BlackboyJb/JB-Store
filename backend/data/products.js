@@ -1,6 +1,5 @@
 const products = [
   {
-    _id: "1",
     name: "Red Dragon Vintage T-Shirt",
     image: "../public/images/shirt/v1.jpg",
     description:
@@ -13,7 +12,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: "2",
     name: "Beach Vintage T-shirt",
     image: "../public/images/shirt/v2.jpg",
     description:
@@ -26,7 +24,6 @@ const products = [
     numReviews: 8,
   },
   {
-    _id: "3",
     name: "Chocolate Vintage T-shirt",
     image: "../public/images/shirt/v3.jpg",
     description:
@@ -39,7 +36,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: "4",
     name: "Sunny Vintage T-shirt",
     image: "../public/images/shirt/v4.jpg",
     description:
@@ -52,7 +48,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: "5",
     name: "Black Widow Gown",
     image: "../public/images/Gowns/g1.jpg",
     description:
@@ -65,7 +60,6 @@ const products = [
     numReviews: 10,
   },
   {
-    _id: "6",
     name: "Blossom Rose Gowns",
     image: "../public/images/Gowns/g2.jpg",
     description:
@@ -78,7 +72,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: "7",
     name: "Chocolate Caramel Gowns",
     image: "../public/images/Gowns/g3.jpg",
     description:
@@ -91,7 +84,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: "8",
     name: "Pink Barbie Gown",
     image: "../public/images/Gowns/g4.jpg",
     description:
@@ -104,7 +96,6 @@ const products = [
     numReviews: 15,
   },
   {
-    _id: "9",
     name: "Alice Cooper Lens",
     image: "../public/images/Lens/alice.jpg",
     description:
@@ -117,7 +108,6 @@ const products = [
     numReviews: 15,
   },
   {
-    _id: "10",
     name: "Jorge Becham Lens",
     image: "../public/images/Lens/jorge.jpg",
     description:
@@ -130,7 +120,6 @@ const products = [
     numReviews: 15,
   },
   {
-    _id: "11",
     name: "Koko Dawnson Lens",
     image: "../public/images/Lens/koko.jpg",
     description:
@@ -143,7 +132,6 @@ const products = [
     numReviews: 15,
   },
   {
-    _id: "12",
     name: "Simple Paru Jenkins Lens",
     image: "../public/images/Lens/paru.jpg",
     description:
@@ -156,7 +144,6 @@ const products = [
     numReviews: 15,
   },
   {
-    _id: "13",
     name: "White Harmony Hoodie",
     image: "../public/images/Hoodie/blend.jpg",
     description:
@@ -169,7 +156,6 @@ const products = [
     numReviews: 15,
   },
   {
-    _id: "14",
     name: "Black Pizza Hoodie",
     image: "../public/images/Hoodie/pizza.jpg",
     description:
@@ -182,7 +168,6 @@ const products = [
     numReviews: 15,
   },
   {
-    _id: "16",
     name: "Pink Toronto Hoodie",
     image: "../public/images/Hoodie/bussin.jpg",
     description:
@@ -195,7 +180,6 @@ const products = [
     numReviews: 15,
   },
   {
-    _id: "17",
     name: "Broski Con Hoodie",
     image: "../public/images/Hoodie/bruh.jpg",
     description:
@@ -208,7 +192,6 @@ const products = [
     numReviews: 15,
   },
   {
-    _id: "18",
     name: "Nike Jordan 1",
     image: "../public/images/shoe/jordan.png",
     description:
@@ -221,7 +204,6 @@ const products = [
     numReviews: 15,
   },
   {
-    _id: "19",
     name: "Air Jordan 2",
     image: "../public/images/shoe/jordan2.png",
     description:
@@ -235,7 +217,6 @@ const products = [
   },
 
   {
-    _id: "20",
     name: "Cream Air Jordan",
     image: "../public/images/shoe/jordan3.jpg",
     description:
@@ -248,7 +229,6 @@ const products = [
     numReviews: 15,
   },
   {
-    _id: '21',
     name: 'Avatar Air Dunk',
     image: '../public/images/shoe/jordan4.png',
     description:

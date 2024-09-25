@@ -1,31 +1,31 @@
-import axios from 'axios'
-import { useEffect, useState } from 'react';
 import { Row, Col } from "react-bootstrap";
-import Brands from '../component/Brand'
+import Brands from "../component/Brand";
+import Loader from "../helpers/loader";
+import Message from "../helpers/message";
+import { useGetProductsQuery } from "../slices/productApiSlice";
 
 const Productdisplaypages = () => {
-  const [product, setProduct] = useState([])
-  useEffect(() => {
-    const getProduct = async() => {
-      try {
-       const res = await axios.get('/api/product') 
-       return setProduct(res.data )
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    getProduct()
-  },[])
+  const { data: product, isLoading, error } = useGetProductsQuery();
   return (
     <>
-      <h1>Latest Products</h1>
-      <Row>
-        {product.map((item) => (
-          <Col key={item._id} sm={12} md={6} lg={4} xl={3}>
-             <Brands brands={item} />
-        </Col>
-        ))}
-      </Row>
+      {isLoading ? (
+        <Loader />
+      ) : error ? (
+        <Message variant="danger">
+          {error?.data?.message || error.error}
+        </Message>
+      ) : (
+        <>
+          <h1>Latest Products</h1>
+          <Row>
+            {product.map((item) => (
+              <Col key={item._id} sm={12} md={6} lg={4} xl={3}>
+                <Brands brands={item} />
+              </Col>
+            ))}
+          </Row>
+        </>
+      )}
     </>
   );
 };

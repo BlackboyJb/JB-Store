@@ -1,13 +1,18 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import connectDB from './config/db.js'
+import productRoutes from './routes/productRoutes.js'
+import {notFound, handleError} from './middlewear/errorHandler.js'
 dotenv.config()
-import product from './data/products.js'
+
 connectDB()
 const app = express()
 
 
 
+app.use('/api/product', productRoutes)
+app.use(notFound)
+app.use(handleError)
 
 
 
@@ -84,14 +89,8 @@ const app = express()
 
 
 
-app.get('/api/product', (req, res) => {
-    res.json(product)
-})
 
-app.get('/api/product/:id', (req, res) => {
-    const products = product.find((p) => p._id === req.params.id)
-    res.json(products)
-})
+
 
 
 

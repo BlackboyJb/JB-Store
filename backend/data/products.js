@@ -1,7 +1,7 @@
 const products = [
   {
     name: "Red Dragon Vintage T-Shirt",
-    image: "../public/images/shirt/v1.jpg",
+    image: "../images/shirt/v1.jpg",
     description:
       "Perfection is what we always want, but it’s difficult to achieve and sometimes it might get people stuck into the same step for a long period. Being stuck for a few days or weeks means less focus on marketing and sales. ",
     brand: "JB",
@@ -13,7 +13,7 @@ const products = [
   },
   {
     name: "Beach Vintage T-shirt",
-    image: "../public/images/shirt/v2.jpg",
+    image: "../images/shirt/v2.jpg",
     description:
       "Perfection is what we always want, but it’s difficult to achieve and sometimes it might get people stuck into the same step for a long period. Being stuck for a few days or weeks means less focus on marketing and sales. ",
     brand: "JB",
@@ -25,7 +25,7 @@ const products = [
   },
   {
     name: "Chocolate Vintage T-shirt",
-    image: "../public/images/shirt/v3.jpg",
+    image: "../images/shirt/v3.jpg",
     description:
       "Perfection is what we always want, but it’s difficult to achieve and sometimes it might get people stuck into the same step for a long period. Being stuck for a few days or weeks means less focus on marketing and sales. ",
     brand: "JB",
@@ -37,7 +37,7 @@ const products = [
   },
   {
     name: "Sunny Vintage T-shirt",
-    image: "../public/images/shirt/v4.jpg",
+    image: "../images/shirt/v4.jpg",
     description:
       "Perfection is what we always want, but it’s difficult to achieve and sometimes it might get people stuck into the same step for a long period. Being stuck for a few days or weeks means less focus on marketing and sales. ",
     brand: "JB",
@@ -49,7 +49,7 @@ const products = [
   },
   {
     name: "Black Widow Gown",
-    image: "../public/images/Gowns/g1.jpg",
+    image: "../images/Gowns/g1.jpg",
     description:
       "Embrace the classic allure of lace with a collection of wedding dresses that exude elegance and sophistication. From delicate Chantilly lace to intricate floral patterns, these dresses are perfect for brides who desire a timeless and romantic look",
     brand: "JB",
@@ -61,7 +61,7 @@ const products = [
   },
   {
     name: "Blossom Rose Gowns",
-    image: "../public/images/Gowns/g2.jpg",
+    image: "../images/Gowns/g2.jpg",
     description:
       "Embrace the classic allure of lace with a collection of wedding dresses that exude elegance and sophistication. From delicate Chantilly lace to intricate floral patterns, these dresses are perfect for brides who desire a timeless and romantic look",
     brand: "JB",
@@ -73,7 +73,7 @@ const products = [
   },
   {
     name: "Chocolate Caramel Gowns",
-    image: "../public/images/Gowns/g3.jpg",
+    image: "../images/Gowns/g3.jpg",
     description:
       "Embrace the classic allure of lace with a collection of wedding dresses that exude elegance and sophistication. From delicate Chantilly lace to intricate floral patterns, these dresses are perfect for brides who desire a timeless and romantic look",
     brand: "JB",
@@ -85,7 +85,7 @@ const products = [
   },
   {
     name: "Pink Barbie Gown",
-    image: "../public/images/Gowns/g4.jpg",
+    image: "../images/Gowns/g4.jpg",
     description:
       "Embrace the classic allure of lace with a collection of wedding dresses that exude elegance and sophistication. From delicate Chantilly lace to intricate floral patterns, these dresses are perfect for brides who desire a timeless and romantic look",
     brand: "JB",
@@ -97,7 +97,7 @@ const products = [
   },
   {
     name: "Alice Cooper Lens",
-    image: "../public/images/Lens/alice.jpg",
+    image: "../images/Lens/alice.jpg",
     description:
       " The glasses are made in lightweight, durable plastic that’s comfortable to wear. The wire cores of the slim temples allow you to adjust them for a secure, custom fit. A subtle curve at the tips adds elegance to these handsome glasses, whether you re working or playing hard after hours. For sophisticated style thats practical and enduring, choose these Issy",
     brand: "JB",
@@ -109,7 +109,7 @@ const products = [
   },
   {
     name: "Jorge Becham Lens",
-    image: "../public/images/Lens/jorge.jpg",
+    image: "../images/Lens/jorge.jpg",
     description:
       " The glasses are made in lightweight, durable plastic that’s comfortable to wear. The wire cores of the slim temples allow you to adjust them for a secure, custom fit. A subtle curve at the tips adds elegance to these handsome glasses, whether you re working or playing hard after hours. For sophisticated style thats practical and enduring, choose these Issy",
     brand: "JB",
@@ -121,7 +121,7 @@ const products = [
   },
   {
     name: "Koko Dawnson Lens",
-    image: "../public/images/Lens/koko.jpg",
+    image: "../images/Lens/koko.jpg",
     description:
       " The glasses are made in lightweight, durable plastic that’s comfortable to wear. The wire cores of the slim temples allow you to adjust them for a secure, custom fit. A subtle curve at the tips adds elegance to these handsome glasses, whether you re working or playing hard after hours. For sophisticated style thats practical and enduring, choose these Issy",
     brand: "JB",
@@ -133,7 +133,7 @@ const products = [
   },
   {
     name: "Simple Paru Jenkins Lens",
-    image: "../public/images/Lens/paru.jpg",
+    image: "../images/Lens/paru.jpg",
     description:
       " The glasses are made in lightweight, durable plastic that’s comfortable to wear. The wire cores of the slim temples allow you to adjust them for a secure, custom fit. A subtle curve at the tips adds elegance to these handsome glasses, whether you re working or playing hard after hours. For sophisticated style thats practical and enduring, choose these Issy",
     brand: "JB",
@@ -145,7 +145,7 @@ const products = [
   },
   {
     name: "White Harmony Hoodie",
-    image: "../public/images/Hoodie/blend.jpg",
+    image: "../images/Hoodie/blend.jpg",
     description:
       "“This hoodie is made of high-quality materials that will keep you warm and comfortable all season long. The fabric is thick and soft, and the stitching is durable. Plus, the hood is lined with fleece for extra warmth. Second, this hoodie has a stylish design that will look great with any outfit",
     brand: "JB",
@@ -157,7 +157,7 @@ const products = [
   },
   {
     name: "Black Pizza Hoodie",
-    image: "../public/images/Hoodie/pizza.jpg",
+    image: "../images/Hoodie/pizza.jpg",
     description:
       "“This hoodie is made of high-quality materials that will keep you warm and comfortable all season long. The fabric is thick and soft, and the stitching is durable. Plus, the hood is lined with fleece for extra warmth. Second, this hoodie has a stylish design that will look great with any outfit",
     brand: "JB",
@@ -169,7 +169,7 @@ const products = [
   },
   {
     name: "Pink Toronto Hoodie",
-    image: "../public/images/Hoodie/bussin.jpg",
+    image: "../images/Hoodie/bussin.jpg",
     description:
       "“This hoodie is made of high-quality materials that will keep you warm and comfortable all season long. The fabric is thick and soft, and the stitching is durable. Plus, the hood is lined with fleece for extra warmth. Second, this hoodie has a stylish design that will look great with any outfit",
     brand: "JB",
@@ -181,7 +181,7 @@ const products = [
   },
   {
     name: "Broski Con Hoodie",
-    image: "../public/images/Hoodie/bruh.jpg",
+    image: "../images/Hoodie/bruh.jpg",
     description:
       "“This hoodie is made of high-quality materials that will keep you warm and comfortable all season long. The fabric is thick and soft, and the stitching is durable. Plus, the hood is lined with fleece for extra warmth. Second, this hoodie has a stylish design that will look great with any outfit",
     brand: "JB",
@@ -193,7 +193,7 @@ const products = [
   },
   {
     name: "Nike Jordan 1",
-    image: "../public/images/shoe/jordan.png",
+    image: "../images/shoe/jordan.png",
     description:
       "Craft compelling descriptions that highlight the unique features, benefits, and quality of the shoes. Identify keywords related to the shoes, such as shoe type, style, materials, and target audience preferences.",
     brand: "JB",
@@ -205,7 +205,7 @@ const products = [
   },
   {
     name: "Air Jordan 2",
-    image: "../public/images/shoe/jordan2.png",
+    image: "../images/shoe/jordan2.png",
     description:
       "Craft compelling descriptions that highlight the unique features, benefits, and quality of the shoes. Identify keywords related to the shoes, such as shoe type, style, materials, and target audience preferences.",
     brand: "JB",
@@ -218,7 +218,7 @@ const products = [
 
   {
     name: "Cream Air Jordan",
-    image: "../public/images/shoe/jordan3.jpg",
+    image: "../images/shoe/jordan3.jpg",
     description:
       "Craft compelling descriptions that highlight the unique features, benefits, and quality of the shoes. Identify keywords related to the shoes, such as shoe type, style, materials, and target audience preferences.",
     brand: "JB",
@@ -230,7 +230,7 @@ const products = [
   },
   {
     name: 'Avatar Air Dunk',
-    image: '../public/images/shoe/jordan4.png',
+    image: '../images/shoe/jordan4.png',
     description:
    'Craft compelling descriptions that highlight the unique features, benefits, and quality of the shoes. Identify keywords related to the shoes, such as shoe type, style, materials, and target audience preferences.',
     brand: 'JB',

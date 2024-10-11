@@ -28,11 +28,11 @@ const CartPage = () => {
   };
 
   const checkOutHandler = () => {
-    navigate("login?redirect=/shipping");
+    navigate("/login?redirect=/shipping");
   };
+ 
 
   const { cartItems } = cart;
-  console.log(cartItems);
   return (
     <Row>
       <Col md={8}>

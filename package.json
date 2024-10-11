@@ -23,11 +23,19 @@
     "colors": "^1.4.0",
     "concurrently": "^9.0.0",
     "cookie-parser": "^1.4.6",
+    "country-state-city": "^3.2.1",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.8.1",
     "mongoose": "^8.6.1",
-    "nodemon": "^3.1.4"
+    "nodemon": "^3.1.4",
+    "react-toastify": "^10.0.5"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cookie-parser": "^1.4.7",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/react-router-bootstrap": "^0.26.6"
   }
 }

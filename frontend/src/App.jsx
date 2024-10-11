@@ -2,6 +2,8 @@ import { Container } from "react-bootstrap";
 import { Outlet } from 'react-router-dom'
 import Headbox from "./component/Headers";
 import Footbox from "./component/Footers";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const App = () => {
@@ -14,6 +16,7 @@ const App = () => {
         </Container>
       </main>
       <Footbox />
+      <ToastContainer />
     </>
   );
 };

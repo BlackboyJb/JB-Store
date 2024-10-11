@@ -1,7 +1,6 @@
 import asyncHandler from "../middlewear/asyncHandler.js";
 import User from "../models/userModels.js";
 import generateToken from "../utils/generateToken.js";
-import jwt from "jsonwebtoken";
 
 //@desc AUTH USER & GET TOKEN
 //@route GET /api/users/login
@@ -13,9 +12,8 @@ const authUser = asyncHandler(async (req, res) => {
     generateToken(res, user._id);
     res.json({
       _id: user._id,
-      name: user.name,
+      fullName: user.fullName,
       email: user.email,
-      isAdmin: user.isAdmin,
     });
   } else {
     res.status(401);
@@ -27,25 +25,25 @@ const authUser = asyncHandler(async (req, res) => {
 //@route POST /api/users
 //@access Public
 const regUser = asyncHandler(async (req, res) => {
-  const { name, email, password, isAdmin } = req.body;
+  const { fullName, email, password, isAdmin } = req.body;
   const userExist = await User.findOne({ email });
   if (userExist) {
     res.status(400);
     throw new Error("User already Exist");
   }
   const user = await User.create({
-    name,
+    fullName,
     email,
     password,
-    isAdmin,
+    isAdmin
   });
   if (user) {
     generateToken(res, user._id);
     res.status(201).json({
       id: user._id,
-      name: user.name,
+      fullName: user.fullName,
       email: user.email,
-      idAdmin: user.isAdmin,
+      isAdmin:user.isAdmin
     });
   } else {
     res.status(400);
@@ -57,7 +55,7 @@ const regUser = asyncHandler(async (req, res) => {
 //@route POST /api/users/logout
 //@access Private
 const logOutUser = asyncHandler(async (req, res) => {
-  res.cookie(jwt, "", {
+  res.cookie("jwt", "", {
     httpOnly: true,
     expires: new Date(0),
   });
@@ -72,9 +70,9 @@ const getUserProfile = asyncHandler(async (req, res) => {
   if (user) {
     res.status(200).json({
       id: user._id,
-      name: user.name,
+      fullName: user.fullName,
       email: user.email,
-      idAdmin: user.isAdmin,
+      isAdmin: user.isAdmin,
     });
   } else {
     res.status(400);
@@ -89,7 +87,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
   const user = await User.findById(req.user._id);
 
   if (user) {
-    user.name = req.body.name || user.name;
+    user.fullName = req.body.fullName || user.fullName;
     user.email = req.body.email || user.email;
   }
 
@@ -102,9 +100,9 @@ const updateUserProfile = asyncHandler(async (req, res) => {
   if (updatedUser) {
     res.status(200).json({
       id: updatedUser._id,
-      name: updatedUser.name,
+      fullName: updatedUser.fullName,
       email: updatedUser.email,
-      idAdmin: updatedUser.isAdmin,
+      isAdmin: updatedUser.isAdmin,
     });
   } else {
     res.status(400);

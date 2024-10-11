@@ -53,12 +53,12 @@ const ProductdetailsPage = () => {
       {isLoading ? (
         <Loader />
       ) : error ? (
-        <div>{error.data.message || error.error});</div>
+        <div>{error.data.message || error.error};</div>
       ) : (
         <>
           <Row>
             <Col md={5}>
-              <Image src={product.image} alt="" width="500px" />
+              <Image src={product.image} alt="" width="400px" />
             </Col>
             <Col md={4}>
               <ListGroup variant="flush">

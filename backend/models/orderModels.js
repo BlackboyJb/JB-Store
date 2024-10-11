@@ -9,7 +9,7 @@ const orderSchema = mongoose.Schema(
     },
     orderItems: [
       {
-        name: { type: String, required: true },
+        fullName: { type: String, required: true },
         qty: { type: Number, required: true },
         image: { type: String, required: true },
         price: { type: Number, required: true },
@@ -20,6 +20,7 @@ const orderSchema = mongoose.Schema(
         },
       },
     ],
+
     shippingAddress: {
       address: { type: String, required: true },
       city: { type: String, required: true },
@@ -46,7 +47,7 @@ const orderSchema = mongoose.Schema(
       required: true,
       default: 0.0,
     },
-    shippingAddress: {
+    shippingPrice: {
       type: Number,
       required: true,
       default: 0.0,

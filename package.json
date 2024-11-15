@@ -1,0 +1,46 @@
+{
+  "name": "jb-store",
+  "version": "1.0.0",
+  "description": "\"ecommerce application built with MERN Stack\"",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "npm run dev --prefix frontend",
+    "dev": "concurrently \"npm run  server\" \"npm run client\"",
+    "data:import": "node backend/seader.js",
+    "data:destroy": "node backend/seader.js -d"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@paypal/react-paypal-js": "^8.7.0",
+    "@reduxjs/toolkit": "^2.2.7",
+    "axios": "^1.7.7",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "colors": "^1.4.0",
+    "concurrently": "^9.0.0",
+    "cookie-parser": "^1.4.6",
+    "country-state-city": "^3.2.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.8.1",
+    "mongoose": "^8.6.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.4",
+    "react-toastify": "^10.0.5",
+    "upload-js": "^2.24.3"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cookie-parser": "^1.4.7",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/react-router-bootstrap": "^0.26.6",
+    "vite-plugin-eslint": "^1.8.1"
+  }
+}

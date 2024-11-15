@@ -20,7 +20,7 @@ const CarouselPage = () => {
         {products.map(item => (
            <Carousel.Item key={item._id} className="carousel-item">
             <Link to={`product/${item._id}`}>
-             <Image src={item.image} alt={item.name}   fluid></Image>
+             <Image src={item.image} alt={item.name}  width='400px' height='200px'  fluid></Image>
              <Carousel.Caption className="carousel-caption">
                 <h2>
                     {item.name} (${item.price})

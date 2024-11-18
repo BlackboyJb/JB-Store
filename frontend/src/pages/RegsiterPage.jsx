@@ -6,14 +6,14 @@ import FormContainer from "../component/formCont";
 import Loader from "../helpers/loader";
 import { useRegisterMutation } from "../slices/userApiSlice";
 import { setCredentials } from "../slices/authSlice.js";
-import {checkPasswordValidityManual} from '../utils/PasswordValidity.jsx'
-import {validateEmailAddress} from '../utils/EmailValidity.jsx'
+import { checkPasswordValidityManual } from "../utils/PasswordValidity.jsx";
+import { validateEmailAddress } from "../utils/EmailValidity.jsx";
 import { toast } from "react-toastify";
 
 const RegsiterPage = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
-  const [emailError, setEmailError] = useState("");  // State to hold the email error message
+  const [emailError, setEmailError] = useState(""); // State to hold the email error message
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordValidity, setPasswordValidity] = useState({
@@ -23,7 +23,7 @@ const RegsiterPage = () => {
     specialCharacter: false,
     length: false,
   });
-  const [showRequirements, setShowRequirements] = useState(false);  // State to control visibility of requirements
+  const [showRequirements, setShowRequirements] = useState(false); // State to control visibility of requirements
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -52,16 +52,22 @@ const RegsiterPage = () => {
 
     // Check other password validity conditions
     if (!passwordValidity.upperCase) {
-      missingRequirements.push("Password must contain at least one uppercase letter.");
+      missingRequirements.push(
+        "Password must contain at least one uppercase letter."
+      );
     }
     if (!passwordValidity.lowerCase) {
-      missingRequirements.push("Password must contain at least one lowercase letter.");
+      missingRequirements.push(
+        "Password must contain at least one lowercase letter."
+      );
     }
     if (!passwordValidity.number) {
       missingRequirements.push("Password must contain at least one number.");
     }
     if (!passwordValidity.specialCharacter) {
-      missingRequirements.push("Password must contain at least one special character.");
+      missingRequirements.push(
+        "Password must contain at least one special character."
+      );
     }
     if (!passwordValidity.length) {
       missingRequirements.push("Password must be at least 8 characters long.");
@@ -106,7 +112,7 @@ const RegsiterPage = () => {
   };
 
   const toggleRequirementsVisibility = () => {
-    setShowRequirements((prev) => !prev);  // Toggle the visibility
+    setShowRequirements((prev) => !prev); // Toggle the visibility
   };
 
   const handleEmailChange = (e) => {
@@ -142,9 +148,10 @@ const RegsiterPage = () => {
             type="email"
             placeholder="Enter Email"
             value={email}
-            onChange={handleEmailChange}  // Use the handleEmailChange
+            onChange={handleEmailChange} // Use the handleEmailChange
           ></Form.Control>
-          {emailError && <div style={{ color: "red" }}>{emailError}</div>}  {/* Display email error message */}
+          {emailError && <div style={{ color: "red" }}>{emailError}</div>}{" "}
+          {/* Display email error message */}
         </Form.Group>
 
         <Form.Group controlId="password" className="my-3">
@@ -157,25 +164,33 @@ const RegsiterPage = () => {
           ></Form.Control>
 
           <Button
-            variant="link"
+            variant="primary"
+            className="mt-2"
             onClick={toggleRequirementsVisibility}
-            className="p-0 mt-1"
           >
             {showRequirements ? "Hide" : "Show"} Password Requirements
           </Button>
 
           {showRequirements && (
             <ul>
-              <li style={{ color: passwordValidity.upperCase ? "green" : "red" }}>
+              <li
+                style={{ color: passwordValidity.upperCase ? "green" : "red" }}
+              >
                 At least one uppercase letter
               </li>
-              <li style={{ color: passwordValidity.lowerCase ? "green" : "red" }}>
+              <li
+                style={{ color: passwordValidity.lowerCase ? "green" : "red" }}
+              >
                 At least one lowercase letter
               </li>
               <li style={{ color: passwordValidity.number ? "green" : "red" }}>
                 At least one number
               </li>
-              <li style={{ color: passwordValidity.specialCharacter ? "green" : "red" }}>
+              <li
+                style={{
+                  color: passwordValidity.specialCharacter ? "green" : "red",
+                }}
+              >
                 At least one special character
               </li>
               <li style={{ color: passwordValidity.length ? "green" : "red" }}>
@@ -199,7 +214,7 @@ const RegsiterPage = () => {
           type="submit"
           variant="primary"
           className="mt-2"
-          isLoading={isLoading}  // Show loader while loading
+          isLoading={isLoading} // Show loader while loading
         >
           Sign Up
         </Button>
@@ -209,12 +224,13 @@ const RegsiterPage = () => {
       <Row className="py-3">
         <Col>
           Already have an account?
-          <Link to={redirect ? `/login?redirect=${redirect}` : `/login`}>Login</Link>
+          <Link to={redirect ? `/login?redirect=${redirect}` : `/login`}>
+            Login
+          </Link>
         </Col>
       </Row>
     </FormContainer>
   );
-
 };
 
 export default RegsiterPage;

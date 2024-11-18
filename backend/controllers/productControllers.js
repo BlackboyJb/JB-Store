@@ -2,7 +2,7 @@ import asyncHandler from "../middlewear/asyncHandler.js";
 import Product from "../models/productModels.js";
 
 const getProduct = asyncHandler(async (req, res) => {
-  const pageSize = 20;
+  const pageSize = process.env.PAGINATION_LIMIT;
   const page = Number(req.query.pageNo);
   const keywords = req.query.keywords
     ? { name: { $regex: req.query.keywords, $options: "i" } }

@@ -5,6 +5,7 @@ import Message from "../helpers/message";
 import Paginate from "../component/Paginate.jsx"
 import CarouselPage from '../component/CarouselPage.jsx'
 import { useGetProductsQuery } from "../slices/productApiSlice";
+import Meta from '../component/Meta.jsx'
 import { Link, useParams } from "react-router-dom";
 
 
@@ -13,6 +14,7 @@ const Productdisplaypages = () => {
   const { data, isLoading, error } = useGetProductsQuery({keywords,pageNo});
   return (
     <>
+    <Meta title='Home Page' />
     {!keywords  ? ( <CarouselPage />) : (<Link to='/' className="btn btn-light mb-4">Go Back</Link>)}
       {isLoading ? (
         <Loader />

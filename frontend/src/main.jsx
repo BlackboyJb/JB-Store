@@ -12,6 +12,7 @@ import { Provider } from "react-redux";
 import stores from "./store.js";
 import App from "./App.jsx";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
+import {HelmetProvider} from 'react-helmet-async'
 import PrivatePage from "./component/PrivateRoute.jsx";
 import AdminPage from "./component/AdminRoute.jsx";
 import ProductDisplayPage from "./pages/Productdisplaypages.jsx";
@@ -63,9 +64,14 @@ const router = createBrowserRouter(
 );
 
 createRoot(document.getElementById("root")).render(
-  <Provider store={stores}>
+<HelmetProvider>
+<Provider store={stores}>
     <PayPalScriptProvider options={{ clientId: "test" }}>
       <RouterProvider router={router} />
     </PayPalScriptProvider>
   </Provider>
+</HelmetProvider>
+ 
+
+  
 );

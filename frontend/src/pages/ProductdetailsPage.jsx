@@ -17,6 +17,7 @@ import {
   useCreateReviewsMutation,
 } from "../slices/productApiSlice.js";
 import Loader from "../helpers/loader.jsx";
+import Meta from '../component/Meta.jsx'
 import { addToCart } from "../slices/cartSlice.js";
 import Message from "../helpers/message.jsx"; 
 
@@ -85,6 +86,7 @@ const ProductdetailsPage = () => {
         <div>{error.data.message || error.error};</div>
       ) : (
         <>
+        <Meta title={product.name} />
           <Row>
             <Col md={5}>
               <Image src={product.image} alt="" width="400px" />

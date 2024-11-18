@@ -16,8 +16,8 @@ const PaymentPage = () => {
   const { shippingAddress } = cart;
 
   useEffect(() => {
-    if (!shippingAddress) {
-      navigate("/placeOrder");
+    if (!shippingAddress.address) {
+      navigate("/shipping");
     }
   }, [shippingAddress, navigate]);
 

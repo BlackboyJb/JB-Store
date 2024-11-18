@@ -80,6 +80,9 @@ const OrderPage = () => {
           },
         },
       ],
+    })
+    .then((orderID) => {
+      return orderID;
     });
   }
 
@@ -87,11 +90,11 @@ const OrderPage = () => {
     toast.error(err.message);
   }
 
-  async function onApprovedTest() {
-    await payOrder({ orderId, details: { payer: {} } });
-    refetch();
-    toast.success("Payment Successful");
-  }
+  // async function onApprovedTest() {
+  //   await payOrder({ orderId, details: { payer: {} } });
+  //   refetch();
+  //   toast.success("Payment Successful");
+  // }
 
 
   //Deliver Order Handler
@@ -206,12 +209,12 @@ const OrderPage = () => {
                     <Loader />
                   ) : (
                     <div>
-                      <Button
+                      {/* <Button
                         onClick={onApprovedTest}
                         style={{ marginBottom: "10px" }}
                       >
                         Test Pay Order
-                      </Button>
+                      </Button> */}
                       <div>
                         <PayPalButtons
                           createOrder={createOrder}

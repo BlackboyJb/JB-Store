@@ -8,6 +8,7 @@ import { logOut } from "../slices/authSlice";
 import { toast } from "react-toastify";
 import logo from "../assets/logo.jpg";
 import SearchBox from './SearchBox.jsx'
+import {resetCart} from '../slices/cartSlice.js'
 
 const Headers = () => {
   const { cartItems } = useSelector((state) => state.cart);
@@ -22,7 +23,8 @@ const Headers = () => {
     try {
       await logoutApiCall().unwrap();
       dispatch(logOut());
-      navigate("/");
+    dispatch(resetCart())
+      navigate("/login");
     } catch (error) {
       toast.error(error?.data?.message) || error.error;
     }

@@ -7,7 +7,7 @@ import productRoutes from "./routes/productRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
 import uploadRoutes from "./routes/uploadRoutes.js"
-import morgan from "morgan";
+// import morgan from "morgan";
 
 import { notFound, handleError } from "./middlewear/errorHandler.js";
 dotenv.config();
@@ -18,7 +18,7 @@ const app = express();
 //Body Parser Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(morgan("tiny"));
+// app.use(morgan("tiny"));
 
 //cookie Parser middleware
 app.use(cookieParser());

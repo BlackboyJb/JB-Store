@@ -23,7 +23,7 @@ const Headers = () => {
     try {
       await logoutApiCall().unwrap();
       dispatch(logOut());
-    dispatch(resetCart())
+      dispatch(resetCart());
       navigate("/login");
     } catch (error) {
       toast.error(error?.data?.message) || error.error;

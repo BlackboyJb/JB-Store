@@ -41,9 +41,8 @@ const cartSlice = createSlice({
       state.cartItems = [];
       localStorage.setItem("cart", JSON.stringify(state));
     },
-    resetCart: (state) => {
-      return state; // Properly reset the state to the initial state
-    },
+    // eslint-disable-next-line no-unused-vars
+    resetCart: (state) => (state = initialState),
   },
 });
 
@@ -54,6 +53,6 @@ export const {
   savePaymentMethod,
   clearCart,
   clearCartItems,
-  resetCart,
+ resetCart
 } = cartSlice.actions;
 export default cartSlice.reducer;

@@ -72,7 +72,7 @@ const router = createBrowserRouter(
 createRoot(document.getElementById("root")).render(
   <HelmetProvider>
     <Provider store={stores}>
-      <PayPalScriptProvider options={{ clientId: "test" }}>
+    <PayPalScriptProvider deferLoading={true}>
         <RouterProvider router={router} />
       </PayPalScriptProvider>
     </Provider>

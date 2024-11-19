@@ -96,8 +96,6 @@ const getOrderById = asyncHandler(async (req, res) => {
 //@access Private
 
 const updateOrdersToPaid = asyncHandler(async (req, res) => {
-  // NOTE: here we need to verify the payment was made to PayPal before marking
-  // the order as paid
   const { verified, value } = await verifyPayPalPayment(req.body.id);
   if (!verified) throw new Error('Payment not verified');
 
@@ -167,6 +165,56 @@ export {
   getOrders,
 };
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // const {
 //   orderItems,
 //   shippingAddress,
@@ -230,6 +278,11 @@ export {
 // });
 // const createdOrder = await order.save();
 // res.status(201).json(createdOrder);
+
+
+
+
+
 
 ///Update order to paid former code
 // const order = await Order.findById(req.params.id);

@@ -75,7 +75,6 @@ export async function verifyPayPalPayment(paypalTransactionId) {
   const paypalResponse = await fetch(
     `${PAYPAL_API_URL}/v2/checkout/orders/${paypalTransactionId}`,
     {
-      method: 'GET',
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${accessToken}`,
@@ -85,7 +84,6 @@ export async function verifyPayPalPayment(paypalTransactionId) {
   if (!paypalResponse.ok) throw new Error('Failed to verify payment');
 
   const paypalData = await paypalResponse.json();
-  console.log('This is the response we are looking for: ', JSON.stringify(paypalData, null, 2))
   return {
     verified: paypalData.status === 'COMPLETED',
     value: paypalData.purchase_units[0].amount.value,

@@ -33,7 +33,7 @@ const OrderPage = () => {
   const {
     data: payPal,
     isLoading: loadingPayPal,
-    error: errorPayPal,
+    isError: errorPayPal,
   } = useGetPayPalClientIdQuery();
 
   const { userInfo } = useSelector((state) => state.auth);
@@ -50,7 +50,7 @@ const OrderPage = () => {
         });
         payPalDispatch({ type: "setLoadingStatus", value: "pending" });
       };
-      if (order && order.isPaid) {
+      if (order && !order.isPaid) {
         if (!window.paypal) {
           loadPayPalScript();
         }
@@ -72,18 +72,19 @@ const OrderPage = () => {
   }
 
   function createOrder(data, actions) {
-    return actions.order.create({
-      purchase_units: [
-        {
-          amount: {
-            value: order.totalPrice,
+    return actions.order
+      .create({
+        purchase_units: [
+          {
+            amount: {
+              value: order.totalPrice,
+            },
           },
-        },
-      ],
-    })
-    .then((orderID) => {
-      return orderID;
-    });
+        ],
+      })
+      .then((orderID) => {
+        return orderID;
+      });
   }
 
   function onError(err) {
@@ -96,17 +97,16 @@ const OrderPage = () => {
   //   toast.success("Payment Successful");
   // }
 
-
   //Deliver Order Handler
-  const deliverOrderHandler =async () => {
-     try {
-      await deliverOrder(orderId)
-      refetch()
-      toast.success('Delivery Successful')
-     } catch (err) {
+  const deliverOrderHandler = async () => {
+    try {
+      await deliverOrder(orderId);
+      refetch();
+      toast.success("Delivery Successful");
+    } catch (err) {
       toast.error(err?.data?.message || err.message);
-     }
-  }
+    }
+  };
   return isLoading ? (
     <Loader />
   ) : error ? (
